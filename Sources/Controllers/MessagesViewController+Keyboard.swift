@@ -29,14 +29,26 @@ import InputBarAccessoryView
 internal extension MessagesViewController {
 
     // MARK: - Register / Unregister Observers
+    
+    func addKeyboardWillChangeFrameNotificationObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.handleKeyboardDidChangeState(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    func removeKeyboardWillChangeFrameNotificationObserver() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
 
     func addKeyboardObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.handleKeyboardDidChangeState(_:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        if shouldHandleKeyboardDidChangeStateNotification {
+            addKeyboardWillChangeFrameNotificationObserver()
+        }
         NotificationCenter.default.addObserver(self, selector: #selector(MessagesViewController.handleTextViewDidBeginEditing(_:)), name: UITextView.textDidBeginEditingNotification, object: nil)
     }
 
     func removeKeyboardObservers() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        if shouldHandleKeyboardDidChangeStateNotification {
+            removeKeyboardWillChangeFrameNotificationObserver()
+        }
         NotificationCenter.default.removeObserver(self, name: UITextView.textDidBeginEditingNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
