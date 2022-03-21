@@ -1,3 +1,6 @@
+2022-03-21  Illia Denysov <illia.denysov@helplightning.com> - Merged by Hale Xie  <hale.xie@helplightning.com>
+	* #1 - Added ability to disable handling keyboardWillChangeFrameNotification
+
 hl-1.0.0
 ==========
 2022-03-17  Hale Xie  <hale.xie@helplightning.com>

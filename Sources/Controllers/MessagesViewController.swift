@@ -104,6 +104,15 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
     public var selectedIndexPathForMenu: IndexPath?
 
     private var isFirstLayout: Bool = true
+    public var shouldHandleKeyboardDidChangeStateNotification: Bool = true {
+        didSet {
+            if shouldHandleKeyboardDidChangeStateNotification {
+                addKeyboardWillChangeFrameNotificationObserver()
+            } else {
+                removeKeyboardWillChangeFrameNotificationObserver()
+            }
+        }
+    }
     
     internal var isMessagesControllerBeingDismissed: Bool = false
 
