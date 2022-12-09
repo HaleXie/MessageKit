@@ -25,10 +25,16 @@
 import Foundation
 
 internal extension Bundle {
+    static let messageKitResourceBundleName = "MessageKitResources"
     #if IS_SPM
     static var messageKitAssetBundle: Bundle = Bundle.module
     #else
     static var messageKitAssetBundle: Bundle {
+        if let bundleUrl = Bundle.main.url(forResource: messageKitResourceBundleName, withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleUrl) {
+                return bundle
+            }
+        }
         return Bundle(for: MessagesViewController.self)
     }
     #endif
