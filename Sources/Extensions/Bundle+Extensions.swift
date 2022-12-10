@@ -23,6 +23,24 @@
  */
 
 import Foundation
+import Dispatch
+
+internal extension Bundle {
+    class MessageKitBundleHelper {
+        static let shared = MessageKitBundleHelper()
+        let resourceBundle: Bundle
+        
+        private init() {
+            var resourceBundle : Bundle? = nil
+            if let bundleUrl = Bundle.main.url(forResource: messageKitResourceBundleName, withExtension: "bundle") {
+                if let bundle = Bundle(url: bundleUrl) {
+                    resourceBundle = bundle
+                }
+            }
+            self.resourceBundle = resourceBundle ?? Bundle(for: MessagesViewController.self)
+        }
+    }
+}
 
 internal extension Bundle {
     static let messageKitResourceBundleName = "MessageKitResources"
@@ -30,12 +48,7 @@ internal extension Bundle {
     static var messageKitAssetBundle: Bundle = Bundle.module
     #else
     static var messageKitAssetBundle: Bundle {
-        if let bundleUrl = Bundle.main.url(forResource: messageKitResourceBundleName, withExtension: "bundle") {
-            if let bundle = Bundle(url: bundleUrl) {
-                return bundle
-            }
-        }
-        return Bundle(for: MessagesViewController.self)
+        return MessageKitBundleHelper.shared.resourceBundle
     }
     #endif
 }
