@@ -33,9 +33,7 @@ internal extension Bundle {
         private init() {
             var resourceBundle : Bundle? = nil
             if let bundleUrl = Bundle.main.url(forResource: messageKitResourceBundleName, withExtension: "bundle") {
-                if let bundle = Bundle(url: bundleUrl) {
-                    resourceBundle = bundle
-                }
+                resourceBundle = Bundle(url: bundleUrl)
             }
             self.resourceBundle = resourceBundle ?? Bundle(for: MessagesViewController.self)
         }
