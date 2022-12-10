@@ -913,7 +913,7 @@
 			repositoryURL = "git@github.com:nathantannar4/InputBarAccessoryView.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				minimumVersion = 5.4.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
