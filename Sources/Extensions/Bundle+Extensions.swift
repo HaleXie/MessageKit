@@ -23,13 +23,30 @@
  */
 
 import Foundation
+import Dispatch
 
 internal extension Bundle {
+    class MessageKitBundleHelper {
+        static let shared = MessageKitBundleHelper()
+        let resourceBundle: Bundle
+        
+        private init() {
+            var resourceBundle : Bundle? = nil
+            if let bundleUrl = Bundle.main.url(forResource: messageKitResourceBundleName, withExtension: "bundle") {
+                resourceBundle = Bundle(url: bundleUrl)
+            }
+            self.resourceBundle = resourceBundle ?? Bundle(for: MessagesViewController.self)
+        }
+    }
+}
+
+internal extension Bundle {
+    static let messageKitResourceBundleName = "MessageKitResources"
     #if IS_SPM
     static var messageKitAssetBundle: Bundle = Bundle.module
     #else
     static var messageKitAssetBundle: Bundle {
-        return Bundle(for: MessagesViewController.self)
+        return MessageKitBundleHelper.shared.resourceBundle
     }
     #endif
 }
