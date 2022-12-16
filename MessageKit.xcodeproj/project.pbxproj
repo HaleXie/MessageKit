@@ -79,7 +79,6 @@
 		C72A8F522944400E006DB10F /* MessagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0A2944400E006DB10F /* MessagesCollectionView.swift */; };
 		C72A8F532944400E006DB10F /* PlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0B2944400E006DB10F /* PlayButtonView.swift */; };
 		C72A8F542944400E006DB10F /* BubbleCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0C2944400E006DB10F /* BubbleCircle.swift */; };
-		C72A8F57294442C5006DB10F /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = C72A8F56294442C5006DB10F /* InputBarAccessoryView */; };
 		C72A8F5A29444349006DB10F /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = C72A8F5929444349006DB10F /* InputBarAccessoryView */; };
 		C7CB28222943270000C8328F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CB28212943270000C8328F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -175,7 +174,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C72A8F57294442C5006DB10F /* InputBarAccessoryView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,7 +414,6 @@
 			);
 			name = MessageKitResources;
 			packageProductDependencies = (
-				C72A8F56294442C5006DB10F /* InputBarAccessoryView */,
 			);
 			productName = MessageKitResources;
 			productReference = C7CB280D2943263700C8328F /* MessageKitResources.bundle */;
@@ -919,11 +916,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C72A8F56294442C5006DB10F /* InputBarAccessoryView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C72A8F55294442C5006DB10F /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
-			productName = InputBarAccessoryView;
-		};
 		C72A8F5929444349006DB10F /* InputBarAccessoryView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C72A8F55294442C5006DB10F /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
