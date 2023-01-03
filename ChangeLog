@@ -1,6 +1,9 @@
+2023-01-03  Hale Xie  <hale.xie@helplightning.com>
+	* Fix the sign issue for MessageKit project
+
 hl-1.0.2
 ==========
-2022-12-16  Hale Xie  <hxie@Hales-Mac.local>
+2022-12-16  Hale Xie  <hale.xie@helplightning.com>
 	* Fix the project issue that prevents the resource from building
 	* #2 - Create a resource bundle for MessageKit
 
