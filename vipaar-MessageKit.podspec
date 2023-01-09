@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'vipaar-MessageKit'
-    s.version = '1.0.3'
+    s.version = '1.0.4'
     s.license = { :type => "MIT", :file => "LICENSE.md" }
  
     s.summary = 'An elegant messages UI library for iOS.'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
     s.swift_version = '5.3'
  
-    s.ios.deployment_target = '12.0'
+    s.ios.deployment_target = '13.0'
     s.ios.resources = ['distributive/MessageKitResources.bundle']
  
     s.dependency 'InputBarAccessoryView', '~> 5.4.0'
