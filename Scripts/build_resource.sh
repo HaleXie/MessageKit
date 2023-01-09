@@ -30,6 +30,7 @@ xcodebuild clean build -project ${MK_PPROJECT} \
 ${MK_BUILD_SETTING} \
 -sdk iphoneos \
 ONLY_ACTIVE_ARCH=NO \
+CODE_SIGNING_ALLOWED=NO \
 
 MK_OUTPUT_DIR=${PROJECT_DIR}/distributive/
 mkdir -p "${MK_OUTPUT_DIR}"
