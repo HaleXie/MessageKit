@@ -159,7 +159,6 @@
 		C72A8F0C2944400E006DB10F /* BubbleCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleCircle.swift; sourceTree = "<group>"; };
 		C79D578D296BF4F90044D518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C79D5794296BF53E0044D518 /* MessageKitResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageKitResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		C79D5796296BF53E0044D518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7CB28212943270000C8328F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -348,21 +347,12 @@
 			path = MessageKitResources;
 			sourceTree = "<group>";
 		};
-		C79D5795296BF53E0044D518 /* MessageKitResources */ = {
-			isa = PBXGroup;
-			children = (
-				C79D5796296BF53E0044D518 /* Info.plist */,
-			);
-			path = MessageKitResources;
-			sourceTree = "<group>";
-		};
 		C7CB27F0294324CA00C8328F = {
 			isa = PBXGroup;
 			children = (
 				C7CB28212943270000C8328F /* Assets.xcassets */,
 				C72A8DF629443D1E006DB10F /* MessageKit */,
 				C79D578C296BF4F90044D518 /* MessageKitResources */,
-				C79D5795296BF53E0044D518 /* MessageKitResources */,
 				C7CB27FE2943253B00C8328F /* Products */,
 				C72A8F5829444349006DB10F /* Frameworks */,
 			);
@@ -787,7 +777,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MessageKitResources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.4;
@@ -853,7 +844,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MessageKitResources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0.4;
