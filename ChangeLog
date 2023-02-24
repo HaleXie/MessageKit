@@ -1,3 +1,8 @@
+hl-1.0.5
+==========
+2023-02-24  Hale Xie  <hale.xie@helplightning.com>
+       * Fix CFBundlePackageType should be BNDL in the resource bundle
+
 hl-1.0.4
 ==========
 2023-01-09  Hale Xie  <hale.xie@helplightning.com>
