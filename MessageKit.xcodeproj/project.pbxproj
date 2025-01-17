@@ -79,7 +79,7 @@
 		C72A8F522944400E006DB10F /* MessagesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0A2944400E006DB10F /* MessagesCollectionView.swift */; };
 		C72A8F532944400E006DB10F /* PlayButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0B2944400E006DB10F /* PlayButtonView.swift */; };
 		C72A8F542944400E006DB10F /* BubbleCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72A8F0C2944400E006DB10F /* BubbleCircle.swift */; };
-		C72A8F5A29444349006DB10F /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = C72A8F5929444349006DB10F /* InputBarAccessoryView */; };
+		C7951AFC2D39EC9300CEACA2 /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = C7951AFB2D39EC9300CEACA2 /* InputBarAccessoryView */; };
 		C79D579B296BF5790044D518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CB28212943270000C8328F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -167,7 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C72A8F5A29444349006DB10F /* InputBarAccessoryView in Frameworks */,
+				C7951AFC2D39EC9300CEACA2 /* InputBarAccessoryView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +397,7 @@
 			);
 			name = MessageKit;
 			packageProductDependencies = (
-				C72A8F5929444349006DB10F /* InputBarAccessoryView */,
+				C7951AFB2D39EC9300CEACA2 /* InputBarAccessoryView */,
 			);
 			productName = MessageKit;
 			productReference = C72A8DF529443D1E006DB10F /* MessageKit.framework */;
@@ -446,7 +446,7 @@
 			);
 			mainGroup = C7CB27F0294324CA00C8328F;
 			packageReferences = (
-				C72A8F55294442C5006DB10F /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
+				C7951AFA2D39EC8600CEACA2 /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 			);
 			productRefGroup = C7CB27FE2943253B00C8328F /* Products */;
 			projectDirPath = "";
@@ -633,11 +633,13 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -712,11 +714,13 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -908,20 +912,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C72A8F55294442C5006DB10F /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */ = {
+		C7951AFA2D39EC8600CEACA2 /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:nathantannar4/InputBarAccessoryView.git";
+			repositoryURL = "https://github.com/HaleXie/InputBarAccessoryView";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.4.0;
+				branch = visionOS;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C72A8F5929444349006DB10F /* InputBarAccessoryView */ = {
+		C7951AFB2D39EC9300CEACA2 /* InputBarAccessoryView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C72A8F55294442C5006DB10F /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
+			package = C7951AFA2D39EC8600CEACA2 /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
 			productName = InputBarAccessoryView;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -96,8 +96,14 @@ open class AvatarView: UIImageView {
         let height = frame.height
         if width == 0 || height == 0 {return UIImage()}
         var font = placeholderFont
+        
+#if os(visionOS)
+        let scale = UITraitCollection.current.displayScale
+#else
+        let scale = UIScreen.main.scale
+#endif
 
-        UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, UIScreen.main.scale)
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: width, height: height), false, scale)
         defer { UIGraphicsEndImageContext() }
         let context = UIGraphicsGetCurrentContext()!
 

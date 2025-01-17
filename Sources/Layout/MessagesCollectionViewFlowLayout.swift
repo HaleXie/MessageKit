@@ -90,7 +90,9 @@ open class MessagesCollectionViewFlowLayout: UICollectionViewFlowLayout {
     }
     
     private func setupObserver() {
+#if os(iOS)
         NotificationCenter.default.addObserver(self, selector: #selector(MessagesCollectionViewFlowLayout.handleOrientationChange(_:)), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
+#endif
     }
 
     // MARK: - Typing Indicator API

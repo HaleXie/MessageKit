@@ -78,9 +78,11 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
         return true
     }
 
+#if os(iOS)
     open override var inputAccessoryView: UIView? {
         return messageInputBar
     }
+#endif
 
     open override var shouldAutorotate: Bool {
         return false
@@ -119,7 +121,9 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
     internal var messageCollectionViewBottomInset: CGFloat = 0 {
         didSet {
             messagesCollectionView.contentInset.bottom = messageCollectionViewBottomInset
+#if os(iOS)
             messagesCollectionView.scrollIndicatorInsets.bottom = messageCollectionViewBottomInset
+#endif
         }
     }
 
@@ -232,7 +236,9 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
     private func setupDefaults() {
         extendedLayoutIncludesOpaqueBars = true
         view.backgroundColor = .collectionViewBackground
+#if os(iOS)
         messagesCollectionView.keyboardDismissMode = .interactive
+#endif
         messagesCollectionView.alwaysBounceVertical = true
         messagesCollectionView.backgroundColor = .collectionViewBackground
         if #available(iOS 13.0, *) {
@@ -465,15 +471,17 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
         return layoutDelegate.footerViewSize(for: section, in: messagesCollectionView)
     }
 
+    // TODO: re-implement with - (nullable UIContextMenuConfiguration *)collectionView:(UICollectionView *)collectionView contextMenuConfigurationForItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths point:(CGPoint)point
+    #if os(iOS)
     open func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         guard let messagesDataSource = messagesCollectionView.messagesDataSource else { return false }
-
+        
         if isSectionReservedForTypingIndicator(indexPath.section) {
             return false
         }
-
+        
         let message = messagesDataSource.messageForItem(at: indexPath, in: messagesCollectionView)
-
+        
         switch message.kind {
         case .text, .attributedText, .emoji, .photo:
             selectedIndexPathForMenu = indexPath
@@ -482,21 +490,21 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
             return false
         }
     }
-
+    
     open func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
         if isSectionReservedForTypingIndicator(indexPath.section) {
             return false
         }
         return (action == NSSelectorFromString("copy:"))
     }
-
+    
     open func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
         guard let messagesDataSource = messagesCollectionView.messagesDataSource else {
             fatalError(MessageKitError.nilMessagesDataSource)
         }
         let pasteBoard = UIPasteboard.general
         let message = messagesDataSource.messageForItem(at: indexPath, in: messagesCollectionView)
-
+        
         switch message.kind {
         case .text(let text), .emoji(let text):
             pasteBoard.string = text
@@ -508,6 +516,7 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
             break
         }
     }
+    #endif
 
     // MARK: - Helpers
     

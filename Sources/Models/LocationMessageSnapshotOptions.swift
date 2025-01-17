@@ -26,7 +26,11 @@ import MapKit
 
 /// An object grouping the settings used by the `MKMapSnapshotter` through the `LocationMessageDisplayDelegate`.
 public struct LocationMessageSnapshotOptions {
-
+#if os(visionOS)
+    public static let screenScale = UITraitCollection.current.displayScale
+#else
+    public static let screenScale = UIScreen.main.scale
+#endif
     /// Initialize LocationMessageSnapshotOptions with given parameters
     ///
     /// - Parameters:
@@ -34,7 +38,7 @@ public struct LocationMessageSnapshotOptions {
     ///   - showsPointsOfInterest: A Boolean value indicating whether the snapshot image should display points of interest.
     ///   - span: The span of the snapshot.
     ///   - scale: The scale of the snapshot.
-    public init(showsBuildings: Bool = false, showsPointsOfInterest: Bool = false, span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0), scale: CGFloat = UIScreen.main.scale) {
+    public init(showsBuildings: Bool = false, showsPointsOfInterest: Bool = false, span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0, longitudeDelta: 0), scale: CGFloat = LocationMessageSnapshotOptions.screenScale) {
         self.showsBuildings = showsBuildings
         self.showsPointsOfInterest = showsPointsOfInterest
         self.span = span
