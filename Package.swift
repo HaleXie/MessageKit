@@ -47,5 +47,5 @@ let package = Package(
         ),
         .testTarget(name: "MessageKitTests", dependencies: ["MessageKit"])
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageModes: [.v5]
 )
